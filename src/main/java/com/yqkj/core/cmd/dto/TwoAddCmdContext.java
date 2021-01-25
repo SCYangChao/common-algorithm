@@ -15,4 +15,6 @@ public class TwoAddCmdContext extends CmdContext<TwoAddInput, TwoAddOutput> {
     public TwoAddCmdContext(CmdType cmdType) {
     }
 
+    public TwoAddCmdContext() {
+    }
 }

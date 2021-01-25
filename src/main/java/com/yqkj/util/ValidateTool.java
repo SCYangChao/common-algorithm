@@ -4,6 +4,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import java.util.Objects;
 import java.util.Set;
 /**
  * @ClassName ValidateTool
@@ -27,6 +28,9 @@ public class ValidateTool {
         return validator;
     }
     public static <T> String validate(T t)  {
+        if(Objects.isNull(t)){
+            return "";
+        }
         Set<ConstraintViolation<T>> constraintViolations = getValidator().validate(t);
         if (constraintViolations.size() > 0) {
             for (ConstraintViolation<T> constraintViolation : constraintViolations) {
